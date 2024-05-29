@@ -1,3 +1,4 @@
 codecarbon
 numpy
+polars
 scalene
