@@ -24,8 +24,8 @@ def utils_test_with_codecarbon(func):
     logger.disabled = True
 
     with OfflineEmissionsTracker() as tracker:
-        for _ in range(5):
-            func()
+        func()
+
     print("Scenario:", func.__name__)
     print(f"Energy consumption: {tracker.final_emissions_data.energy_consumed * 1e6:.2f} mWh")
     print(f" - cpu: {tracker.final_emissions_data.cpu_energy * 1e6:.2f} mWh")
