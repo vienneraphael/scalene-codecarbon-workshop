@@ -59,6 +59,6 @@ def main_cpu():
 
 if __name__ == "__main__":
     # print("launching io")
-    # main_io(n_threads=1)
+    # main_io(n_threads=4)
     print("launching cpu")
-    main_cpu(n_workers=1)
+    main_cpu(n_workers=4)

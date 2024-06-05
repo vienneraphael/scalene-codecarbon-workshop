@@ -20,8 +20,8 @@ transform = transforms.Compose([
 
 # Chargement des données CIFAR-10
 # TODO: changer ./data
-train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-test_dataset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
+train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform, persistent_workers=True, pin_memory=True, prefetch_factor=8, num_workers=8)
+test_dataset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform, persistent_workers=True, pin_memory=True, prefetch_factor=8, num_workers=8)
 
 # Chargement des données avec DataLoader
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)

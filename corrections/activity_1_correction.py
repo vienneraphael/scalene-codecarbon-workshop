@@ -3,9 +3,19 @@ import numpy as np
 from codecarbon import OfflineEmissionsTracker
 
 
-def test_me():
+def test_me_best():
+    x = np.arange(10**7)
+    y = np.random.uniform(0, 100, size=(10**8))
+
+
+def test_me_worse():
     x = np.array(range(10**7))
     y = np.array(np.random.uniform(0, 100, size=(10**8)))
+
+
+def test_me_middle():
+    x = np.array(range(10**7))
+    y = np.random.uniform(0, 100, size=(10**8))
 
 
 def utils_test_with_codecarbon(func):
@@ -25,6 +35,10 @@ def utils_test_with_codecarbon(func):
 
 if __name__ == "__main__":
     # Testing with Scalene
-    test_me()
+    test_me_best()
+    # test_me_worse()
+    # test_me_middle()
+
     # Testing with CodeCarbon
-    # utils_test_with_codecarbon(test_me)
+    # utils_test_with_codecarbon(test_me_best)
+    # utils_test_with_codecarbon(test_me_worse)
